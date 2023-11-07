@@ -20,7 +20,7 @@ export const Signin = () => {
             return;
         }
         if (uPassword?.length < 4) {
-            alert('Please enter a password.');
+            alert('Please enter a ssspassword.');
             return;
         }
     }
