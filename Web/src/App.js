@@ -32,7 +32,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="main">
-        <h2>Welcome to the Home</h2>
+        <h2>Welcome to the Blog</h2>
 
         <ReactRoutes>
           {routes.map((item, i) => (
