@@ -1,11 +1,61 @@
 const express = require("express");
 const router = express.Router();
 const Todo = require("../models/todoModel");
+const collection = require("../models/accountModel");
 
 router.route("/").get((req, res) => {
   res.json({ success: true });
 });
 
+router.route("/signin").post(async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const check =  collection.findOne({ email: email }).then((user) => {
+      console.log("user", user);
+      if(user && password === user.password){
+        res.json("exist");
+      }else if(user && password !== user.password){
+        res.json("password wrong");
+      }else{
+        res.json("notexist");
+      }
+
+    // if (check) {
+    //     // console.log("password correct");
+    //  res.json("exist");
+    //   } else {
+    //     console.log("password wrong");
+    //     res.json("notexist");
+    //   }
+    });
+  
+  } catch (e) {
+    res.json("fail");
+  }
+});
+router.route("/signup").post(async (req, res) => {
+
+  const { email, password } = req.body;
+
+  const data = {
+    email: email,
+    password: password,
+  };
+
+  try {
+    const check = await collection.findOne({ email: email });
+
+    if (check) {
+      res.json("exist");
+    } else {
+      res.json("notexist");
+      await collection.insertMany([data]);
+    }
+  } catch (e) {
+    res.json("fail");
+  }
+});
 router.route("/create").post(async (req, res) => {
   const title = req.body.title;
   const temp = await new Todo({ title: title });

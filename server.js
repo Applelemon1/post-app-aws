@@ -34,6 +34,8 @@ const connectToMongoDB = async () => {
   });
 };
 
+
+
 app.listen(PORT, () => {
   connectToMongoDB();
   console.log("server is running on ", PORT);

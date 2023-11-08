@@ -12,18 +12,22 @@ import { Routes as ReactRoutes, Route, Navigate } from "react-router-dom";
 
 function App() {
   const routes = [
+    // {
+    //   path: "/",
+    //   renderer: (params = {}) => <Main {...params} />,
+    // },
     {
       path: "/",
-      renderer: (params = {}) => <Main {...params} />,
+      renderer: (params = {}) => <Signin {...params} />,
     },
     {
       path: "/todo",
       renderer: (params = {}) => <Todo {...params} />,
     },
-    {
-      path: "/signin",
-      renderer: (params = {}) => <Signin {...params} />,
-    },
+    // {
+    //   path: "/signin",
+    //   renderer: (params = {}) => <Signin {...params} />,
+    // },
     {
       path: "/signup",
       renderer: (params = {}) => <Signup {...params} />,
@@ -32,7 +36,8 @@ function App() {
   return (
     <Provider store={store}>
       <div className="main">
-        <h2>Welcome to the Blog</h2>
+        <div className="navBar"> <h2>Post App AWS</h2></div>
+       
 
         <ReactRoutes>
           {routes.map((item, i) => (

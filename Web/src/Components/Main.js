@@ -33,7 +33,7 @@ export const Main = () => {
       ) : (
         <Button
           variant="primary"
-          onClick={Sign in}
+          onClick={Signin}
           style={{ marginBottom: "10px" }}
         >
           Signin
