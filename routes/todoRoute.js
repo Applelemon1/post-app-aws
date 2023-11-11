@@ -57,8 +57,11 @@ router.route("/signup").post(async (req, res) => {
   }
 });
 router.route("/create").post(async (req, res) => {
+  console.log('hoho')
   const title = req.body.title;
-  const temp = await new Todo({ title: title });
+  const image = req.body.image;
+  const whoPost = req.body.whoPost
+  const temp = await new Todo({ title: title, image:image, whoPost:whoPost });
   await temp.save();
   return res.json({ success: true, todo: temp });
 });
@@ -117,6 +120,8 @@ router.route("/put/:id").put((req, res) => {
 });
 
 router.route("/todos").get(async (req, res) => {
+  console.log('res json back',res)
+
   return await Todo.find().then((todo) => {
     return res.json(todo);
   });

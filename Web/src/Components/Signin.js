@@ -26,11 +26,11 @@ export const Signin = () => {
               })
               .then((res) => {
                 if (res.data == "exist") {
-                  navigate("/todo", { state: { id: email } });
+                  navigate("/todo", { state: email  });
                 } else if (res.data == "password wrong") {
                   alert("password is wrong, please try again.");
                 } else if (res.data == "notexist") {
-                  alert("User have not sign up");
+                  alert("User have not sign up.");
                 }
               })
               .catch((e) => {
@@ -63,7 +63,7 @@ export const Signin = () => {
                 </Form.Group>
                 <br></br>
                 <Button variant="primary" onClick={login}>Sign in</Button> <br></br><br></br><br></br>
-                <span>Don't have an account ?</span>&nbsp; &nbsp;<Button variant="primary" onClick={signUp}>Sign up</Button>
+                <span>Don't have an account ?</span>&nbsp; &nbsp;<Button variant="secondary" onClick={signUp}>Sign up</Button>
 
             </Form>
         </div>

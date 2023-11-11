@@ -41,9 +41,9 @@ body{
 
 }
 .todoInputList{
-margin-right: 14em;
-display: inline-block;
-width: 8em;
+/* margin-right: 14em; */
+/* display: inline-block;
+width: 8em; */
 }
 
 .todoEditbtn{
@@ -58,3 +58,21 @@ height: 90%;
   
 }
 
+.cardPost{
+  height: auto;
+  width: 30em;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0px 6px 11px 0px rgba(0, 0, 0, 0.26); 
+  border-radius: 8px;
+
+}
+.uploadandpost{
+  display: flex;
+  justify-content: space-between;
+}
+
+.postBy{
+  display: flex;
+  justify-content: space-between;
+}

@@ -19,7 +19,7 @@ export const Signup = () => {
           };
         axios.post(`${baseURL}/signup`,data).then((res) => {
             if (res.data == "exist") {
-              alert("This email is already exists");
+              alert("This email is already exists.");
             } else if (res.data == "notexist") {
             //   history("/todo", { state: { id: email } });
             navigate("/todo");
@@ -64,7 +64,7 @@ export const Signup = () => {
                 </Form.Group> */}
                 <br></br>
                  {/* &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; */}
-                <Button variant="primary" onClick={Signup}>Sign up</Button><br></br><br></br><br></br>
+                <Button variant="secondary" onClick={Signup}>Sign up</Button><br></br><br></br><br></br>
                 <span>already have an account ?</span>&nbsp; &nbsp;<Button variant="primary" onClick={Loginpush} >Sign in</Button>
 
             </Form>
